@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen w-screen flex justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 transition-colors duration-500">
-      <div className="flex flex-col gap-8 p-8  w-full">
+      <div className="flex flex-col gap-8 w-full">
         {/* Header Section */}
         <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-8">
@@ -18,8 +18,8 @@ const Home = () => {
             <div className="hidden sm:flex items-start justify-between">
               {/* Left logo/brand area */}
               <div className="w-20 flex justify-start">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">YT</span>
+                <div className="w-8 h-8 bg-neutral-100 rounded-lg flex items-center justify-center">
+                  <span className="text-neutral-800 font-bold text-sm">YT</span>
                 </div>
               </div>
 
@@ -51,8 +51,8 @@ const Home = () => {
             <div className="sm:hidden">
               {/* Mobile header row */}
               <div className="flex items-center justify-between mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">YT</span>
+                <div className="w-8 h-8 bg-neutral-100 rounded-lg flex items-center justify-center">
+                  <span className="text-neutral-600 font-bold text-sm">YT</span>
                 </div>
 
                 <Button
@@ -81,7 +81,7 @@ const Home = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+              <div className="w-3 h-8 bg-neutral-600 rounded-full"></div>
               <span className="text-lg font-semibold text-gray-900 dark:text-white">
                 Your Videos
               </span>
@@ -125,7 +125,7 @@ const Home = () => {
         ) : (
           /* Enhanced Empty State */
           <div className="text-center py-20">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200 dark:border-gray-700 p-12 max-w-md mx-auto">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl  border border-gray-200 dark:border-gray-700 p-12 max-w-md mx-auto">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg
                   className="w-10 h-10 text-blue-500"
