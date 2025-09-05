@@ -70,11 +70,9 @@ export function VideoProvider({ children }) {
     setVideos([
       {
         id: Date.now(),
-        name: "Sample Video",
-        description: "This is a default video added on mount.",
-        youtubeId: normalizeYouTubeUrl(
-          "https://youtube.com/shorts/XYSkOBvSd3U?si=aVCF7TQ0r3jT_JCa"
-        ),
+        name: "Music Video",
+        description: "First video from YouTube",
+        url: normalizeYouTubeUrl("https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
       },
     ]);
   }, []);

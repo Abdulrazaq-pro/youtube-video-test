@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import AddVideoDialog from "./components/Modal";
 import ThumbnailButton from "./components/thumbnail-button-player";
 import { Link } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const { videos, addVideo, deleteVideo, error, loading } = useVideoContext();
@@ -28,8 +29,7 @@ const Home = () => {
                   YouTube Studio
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                  Create, manage, and preview your YouTube video with
-                  ease
+                  Create, manage, and preview your YouTube video with ease
                 </p>
               </div>
 
@@ -117,9 +117,8 @@ const Home = () => {
                   className="absolute top-2 right-2 opacity-75 hover:opacity-100"
                   onClick={() => deleteVideo(video.id)}
                 >
-                                  ✕              {" "}
+                  ✕
                 </Button>
-                           {" "}
               </div>
             ))}
           </div>
@@ -173,6 +172,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <Toaster />
     </div>
   );
 };

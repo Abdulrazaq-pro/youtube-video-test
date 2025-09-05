@@ -36,13 +36,7 @@ const MobileLayout = ({
         {duration && <Badge icon={Clock} text={duration} position="bottom-3 right-3" />}
         {views && <Badge icon={Eye} text={views} position="bottom-3 left-3" />}
         
-        {isYouTube && (
-          <div className="absolute top-3 right-3">
-            <div className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-lg">
-              YouTube
-            </div>
-          </div>
-        )}
+       
       </div>
 
       {/* Content Section */}
