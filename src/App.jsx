@@ -39,7 +39,7 @@ const Home = () => {
                   <Button
                     variant="outline"
                     size="default"
-                    className="border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
+                    className="border-gray-300 font-medium"
                   >
                     About
                   </Button>
@@ -58,7 +58,7 @@ const Home = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
+                    className="border-gray-300 font-medium"
                   >
                     About
                   </Button>
@@ -115,7 +115,7 @@ const Home = () => {
                 <Button
                   variant="destructive"
                   size="sm"
-                  className="absolute top-2 right-2 opacity-75 hover:opacity-100"
+                  className="absolute top-2 right-2 opacity-75"
                   onClick={() => deleteVideo(video.id)}
                 >
                   ✕

@@ -48,7 +48,7 @@ const PlayButtonOverlay = ({ size = "default" }) => {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <motion.div
-        whileHover={{ scale: 1.1 }}
+        // whileHover={{ scale: 1.1 }}
         className={`${padding} rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-white/20`}
       >
         <Play size={iconSize} className="fill-gray-900 text-gray-900 ml-0.5" />

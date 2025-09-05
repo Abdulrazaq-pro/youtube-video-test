@@ -57,9 +57,9 @@ const MobileLayout = ({
             Click to play
           </span>
           <motion.div
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            initial={{ x: -10 }}
-            whileHover={{ x: 0 }}
+            className="opacity-0  transition-opacity duration-200"
+            // initial={{ x: -10 }}
+            // whileHover={{ x: 0 }}
           >
             <Play size={14} className="text-blue-500" />
           </motion.div>
@@ -123,9 +123,9 @@ const DesktopLayout = ({
           </div>
           
           <motion.div
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            initial={{ x: -10 }}
-            whileHover={{ x: 0 }}
+            className="opacity-0  transition-opacity duration-200"
+            // initial={{ x: -10 }}
+            // whileHover={{ x: 0 }}
           >
             <Play size={16} className="text-blue-500" />
           </motion.div>
@@ -188,9 +188,9 @@ const VideoModal = ({
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            whileHover={{ scale: 1.1 }}
+            // whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute top-6 right-6 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white border border-white/20 backdrop-blur-sm transition-all duration-200 hover:cursor-pointer"
+            className="absolute top-6 right-6 z-10 p-3 rounded-full bg-black/50  text-white border border-white/20 backdrop-blur-sm transition-all duration-200 hover:cursor-pointer"
             aria-label="Close video"
           >
             <X size={24} />
@@ -283,12 +283,12 @@ export default function ThumbnailButton ({
         ref={buttonRef}
         initial={{ scale: 1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.01, y: -1 }}
+        // whileHover={{ scale: 1.01, y: -1 }}
         whileTap={{ scale: 0.99 }}
         onClick={handleOpenModal}
         className={`
           relative w-full overflow-hidden rounded-2xl bg-white dark:bg-gray-900 
-          shadow-lg hover:shadow-2xl transition-all duration-300
+         transition-all duration-300
           group focus:outline-none focus:ring-4 focus:ring-blue-500/20
           border border-gray-200 dark:border-gray-700 hover:cursor-pointer
           ${className}
