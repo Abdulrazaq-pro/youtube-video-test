@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 
 // Assuming you have VideoContext created somewhere
 const VideoContext = createContext();
@@ -7,7 +7,9 @@ const VideoContext = createContext();
 const validateYouTubeVideo = async (url) => {
   try {
     const response = await fetch(
-      `https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`
+      `https://www.youtube.com/oembed?url=${encodeURIComponent(
+        url
+      )}&format=json`
     );
     return response.ok;
   } catch (err) {
@@ -19,35 +21,38 @@ const normalizeYouTubeUrl = (url) => {
   // Extract video ID from various YouTube URL formats
   try {
     const urlObj = new URL(url);
-    
+
     // Handle youtu.be short URLs
-    if (urlObj.hostname === 'youtu.be') {
+    if (urlObj.hostname === "youtu.be") {
       return urlObj.pathname.slice(1); // Remove leading slash, return just the ID
     }
-    
+
     // Handle youtube.com URLs
-    if (urlObj.hostname === 'www.youtube.com' || urlObj.hostname === 'youtube.com') {
+    if (
+      urlObj.hostname === "www.youtube.com" ||
+      urlObj.hostname === "youtube.com"
+    ) {
       // Handle /watch?v= format
-      if (urlObj.pathname === '/watch' && urlObj.searchParams.has('v')) {
-        return urlObj.searchParams.get('v');
+      if (urlObj.pathname === "/watch" && urlObj.searchParams.has("v")) {
+        return urlObj.searchParams.get("v");
       }
-      
+
       // Handle /shorts/ format
-      if (urlObj.pathname.startsWith('/shorts/')) {
-        return urlObj.pathname.split('/shorts/')[1];
+      if (urlObj.pathname.startsWith("/shorts/")) {
+        return urlObj.pathname.split("/shorts/")[1];
       }
-      
+
       // Handle /embed/ format
-      if (urlObj.pathname.startsWith('/embed/')) {
-        return urlObj.pathname.split('/embed/')[1];
+      if (urlObj.pathname.startsWith("/embed/")) {
+        return urlObj.pathname.split("/embed/")[1];
       }
-      
+
       // Handle /v/ format (old YouTube URLs)
-      if (urlObj.pathname.startsWith('/v/')) {
-        return urlObj.pathname.split('/v/')[1];
+      if (urlObj.pathname.startsWith("/v/")) {
+        return urlObj.pathname.split("/v/")[1];
       }
     }
-    
+
     // If no ID found, return original URL
     return url;
   } catch (err) {
@@ -61,10 +66,23 @@ export function VideoProvider({ children }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setVideos([
+      {
+        id: Date.now(),
+        name: "Sample Video",
+        description: "This is a default video added on mount.",
+        youtubeId: normalizeYouTubeUrl(
+          "https://youtube.com/shorts/XYSkOBvSd3U?si=aVCF7TQ0r3jT_JCa"
+        ),
+      },
+    ]);
+  }, []);
+
   const addVideo = async (form) => {
     setError(""); // Clear previous errors
     setLoading(true);
-    
+
     try {
       const isValid = await validateYouTubeVideo(form.url);
       setLoading(false);
@@ -96,7 +114,9 @@ export function VideoProvider({ children }) {
   };
 
   return (
-    <VideoContext.Provider value={{ videos, addVideo, deleteVideo, error, loading }}>
+    <VideoContext.Provider
+      value={{ videos, addVideo, deleteVideo, error, loading }}
+    >
       {children}
     </VideoContext.Provider>
   );
