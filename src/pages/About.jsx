@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-export default function About ()  {
+export default function About() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 px-6 py-12">
       <div className="max-w-3xl w-full bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-8">
@@ -22,7 +22,7 @@ export default function About ()  {
 
         {/* Requirements */}
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-          📌 Requirements Implemented
+          Requirements Implemented
         </h2>
         <ul className="list-disc list-inside space-y-1 mb-6 text-gray-700 dark:text-gray-300">
           <li>Embedded YouTube player for video playback</li>
@@ -36,7 +36,7 @@ export default function About ()  {
 
         {/* Tech Stack */}
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-          🛠️ Tech Stack
+          Tech Stack
         </h2>
         <ul className="list-disc list-inside space-y-1 mb-6 text-gray-700 dark:text-gray-300">
           <li>React (with Context API)</li>
@@ -47,7 +47,7 @@ export default function About ()  {
 
         {/* Thought Process */}
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-          🚀 Thought Process
+          Thought Process
         </h2>
         <p className="text-gray-700 dark:text-gray-300 mb-6">
           I approached the task by first fulfilling the core requirements:
@@ -67,12 +67,12 @@ export default function About ()  {
 
         {/* GitHub */}
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-          📂 GitHub Repository
+          GitHub Repository
         </h2>
         <p className="text-gray-700 dark:text-gray-300 mb-8">
           You can view the full source code here:{" "}
           <a
-            href="https://github.com/yourusername/your-repo"
+            href="https://github.com/Abdulrazaq-pro/youtube-video-test"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 dark:text-blue-400 font-medium underline"
@@ -86,12 +86,9 @@ export default function About ()  {
       </div>
     </div>
   );
-};
+}
 
-// export default About;
-
-// import React from 'react'
-
+// Back button component
 export function BackToHome() {
   const navigate = useNavigate();
   return (

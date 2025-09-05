@@ -54,14 +54,15 @@ const Home = () => {
                 <div className="w-8 h-8 bg-neutral-100 rounded-lg flex items-center justify-center">
                   <span className="text-neutral-600 font-bold text-sm">YT</span>
                 </div>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
-                >
-                  About
-                </Button>
+                <Link to="/about" className="">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
+                  >
+                    About
+                  </Button>
+                </Link>
               </div>
 
               {/* Mobile centered content */}
